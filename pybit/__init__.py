@@ -1066,6 +1066,8 @@ class HTTP:
 
         if kwargs.get('symbol', '')[-2:].isdigit():
             suffix = '/futures/private/position/switch-mode'
+        elif kwargs.get('symbol', '').endswith('USDT') or kwargs.get('coin') == 'USDT':
+            suffix = '/private/linear/position/switch-mode'
         else:
             suffix = '/v2/private/position/switch-mode'
 
